@@ -1,0 +1,78 @@
+.heart {
+  width: 10px;
+  height: 10px;
+  position: fixed;
+  background: pink;
+  transform: rotate(45deg);
+  animation: heartMove 1s ease-out forwards;
+  z-index: 99999;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: pink;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  left: -5px;
+}
+
+.heart::after {
+  top: -5px;
+}
+
+@keyframes heartMove {
+  to {
+    opacity: 0;
+    transform: translateY(-50px) rotate(45deg);
+  }
+}
+
+body {
+  background: linear-gradient(
+    180deg,
+    #f9fcff 0%,
+    #eef5fb 100%
+  );
+}
+
+.card-widget,
+.post {
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 20px rgba(183, 212, 234, 0.35);
+}
+
+.post:hover,
+.card-widget:hover {
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+
+/* 字体路径 */
+@font-face {
+  font-family: 'Tangerine-Regular'; /* 本地字体名字 */
+  src: url('/fonts/Tangerine-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 标题 */
+#site-title {
+  font-family: 'Tangerine-Regular', cursive !important; /* 使用上面定义的名字 */
+  font-size: 26rem !important;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* 移动标题*/
+#site-info {
+  top: 9% !important; 
+}
